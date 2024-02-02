@@ -1,5 +1,6 @@
 # HiMolformer
 Integrating GNN and Transformer representations for predicting liver microsome stability with SMILES
+
 ![HiMolformer_architecture](architecture.png)
 
 ## Main packages
@@ -14,4 +15,4 @@ python main.py
 ```
 By configuring the hyperparameters in **'config.yaml'**, you can facilitate both training and inference processes.
 
-## This is currently in progress.
+## :construction: This repository is currently in progress. :construction:
