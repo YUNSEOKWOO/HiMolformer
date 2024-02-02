@@ -14,5 +14,3 @@ To train and perform inference with the model, use the following command:
 python main.py
 ```
 By configuring the hyperparameters in **'config.yaml'**, you can facilitate both training and inference processes.
-
-## :construction: This repository is currently in progress. :construction:
