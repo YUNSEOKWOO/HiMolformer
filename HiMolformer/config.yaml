@@ -1,0 +1,55 @@
+device: 'cuda:0'
+data_root: 'data'
+raw_filename: 'reg_MLM_HLM.csv'  # reg_MLM_HLM.csv(for regression task), cls_RLM.csv, cls_HLM.csv(for classification task)
+batch_size: 128
+epochs: 1
+lr_start: 0.00003
+lr_multiplier: 1
+decay: 0
+dropout: 0.1
+target: "MLM"  # MLM, RLM, HLM
+seed: 40
+split: "scaffold"  # random, scaffold
+train_ratio: 0.8   # train_dataset ratio
+valid_ratio: 0.1   # valid_dataset ratio
+test_ratio: 0.1    # test_dataset ratio
+emb_type: "concat"  # avg, sum, concat, attention, cnn, HiMol(only HiMol embed), Molformer(only Molformer embed)
+decoder: 'MLP' # MLP, cnn, cross_attention, self_attention
+loss: 'RMSE' # MAE, MSE, RMSE, BCE(for classfication task)
+HiMol_weight: 1
+Molformer_weight: 1
+emb_save: False   # True, False
+num_workers: 0
+checkpoints_folder: 'results'
+train_checkpoint: None  # Used to resume training from a specific point.
+inference_mode: False # True, False
+inference_checkpoint: ''  # Used to load a specific checkpoint for inference.
+inference_data_path: 'data/inference'
+inference_data_name: 'inference_data.csv'
+pretrain_freezing: False  # True, False
+gaussian_noise: False  # True, False
+
+HiMol:
+  emb_dim: 768
+  lr_feat: 0.001
+  lr_pred: 0.001
+  decay: 0
+  num_layer: 5
+  dropout: 0.5
+  JK: "last"
+  gnn_type: "gin"
+  num_workers: 0
+  GNN_para: true
+
+Molformer:
+  n_head: 12
+  n_layer: 12
+  n_embd: 768
+  d_dropout: 0.1
+  dropout: 0.1
+  lr_start: 0.00003  #3e-5
+  lr_multiplier: 1
+  num_workers: 0
+  num_feats: 32
+  pretrained_path: 'checkpoint/Molformer_pretrained_checkpoints/N-Step-Checkpoint_3_30000.ckpt'
+  dims: [768, 768, 768, 1]
