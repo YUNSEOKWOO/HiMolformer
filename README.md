@@ -1,5 +1,6 @@
 # HiMolformer
 Integrating GNN and Transformer representations for predicting liver microsome stability with SMILES
+Paper: [https://doi.org/10.1016/j.compbiolchem.2024.108263](https://doi.org/10.1016/j.compbiolchem.2024.108263)
 
 ![HiMolformer_architecture](architecture.png)
 
